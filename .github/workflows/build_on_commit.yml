@@ -26,11 +26,11 @@ jobs:
 
     # Build with Platformio
     - name: PlatformIO Install
-      run: |
+      run:  pio run -e VARIANT_PWM -v
         python -m pip install --upgrade pip
         pip install --upgrade platformio
     - name: PlatformIO Run
-      run: pio run
+      run: pipio run -e VARIANT_PWM -vo run
 
     - name: 'Upload Build Artifact'
       uses: actions/upload-artifact@v4
